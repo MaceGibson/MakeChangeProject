@@ -36,7 +36,7 @@ public class CashRegister {
 		double change = tender - price;
 
 		// change to int for whole number calculations
-		int changeInCents = (int)(change * 100);
+		int changeInCents = (int) Math.round(change * 100);
 
 		// now we need to provide bills in cents for the program example: 2000c is equal
 		// to $20 bill
@@ -73,12 +73,8 @@ public class CashRegister {
 		int nickels = changeInCents / centsToBills[6];
 		changeInCents %= centsToBills[6];
 
-		System.out.println("Debug - changeInCents: " + changeInCents);
-		int pennies = changeInCents;
-		System.out.println("Debug - pennies: " + pennies);
-
 		// 1c
-		//int pennies = changeInCents;
+		int pennies = changeInCents;
 
 		// Display the change amount
 		System.out.println("The change due to the customer is:");
